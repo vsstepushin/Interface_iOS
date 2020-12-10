@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F445574B258168C8005F53EB /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4455749258168C8005F53EB /* GroupCell.swift */; };
+		F445575125817B76005F53EB /* AllGroupsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F445575025817B76005F53EB /* AllGroupsTableController.swift */; };
 		F46F36012579070100F01363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F36002579070100F01363 /* AppDelegate.swift */; };
 		F46F36032579070100F01363 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F36022579070100F01363 /* SceneDelegate.swift */; };
 		F46F36082579070100F01363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46F36062579070100F01363 /* Main.storyboard */; };
 		F46F360A2579070600F01363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46F36092579070600F01363 /* Assets.xcassets */; };
 		F46F36172579073300F01363 /* VKLogINVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F36162579073300F01363 /* VKLogINVC.swift */; };
+		F4B6E7882581432D00B305D2 /* MyFriendsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6E7862581432D00B305D2 /* MyFriendsTableController.swift */; };
+		F4B6E78D2581474800B305D2 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6E78C2581474800B305D2 /* FriendCell.swift */; };
+		F4B6E7942581538E00B305D2 /* MyGroupsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B6E7932581538E00B305D2 /* MyGroupsTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4455749258168C8005F53EB /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		F445575025817B76005F53EB /* AllGroupsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTableController.swift; sourceTree = "<group>"; };
 		F46F35FD2579070100F01363 /* VK_user_interface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK_user_interface.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46F36002579070100F01363 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F46F36022579070100F01363 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +29,9 @@
 		F46F36092579070600F01363 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F46F360E2579070600F01363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46F36162579073300F01363 /* VKLogINVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLogINVC.swift; sourceTree = "<group>"; };
+		F4B6E7862581432D00B305D2 /* MyFriendsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsTableController.swift; sourceTree = "<group>"; };
+		F4B6E78C2581474800B305D2 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		F4B6E7932581538E00B305D2 /* MyGroupsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F445574F25817B16005F53EB /* AllGroups */ = {
+			isa = PBXGroup;
+			children = (
+				F445575025817B76005F53EB /* AllGroupsTableController.swift */,
+			);
+			path = AllGroups;
+			sourceTree = "<group>";
+		};
 		F46F35F42579070100F01363 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +95,9 @@
 		F46F35FF2579070100F01363 /* VK_user_interface */ = {
 			isa = PBXGroup;
 			children = (
+				F445574F25817B16005F53EB /* AllGroups */,
+				F4B6E7922581533000B305D2 /* MyGroups */,
+				F4B6E785258141E500B305D2 /* MyFriends */,
 				F419707E257D05E200842EE9 /* Controller */,
 				F4197080257D061400842EE9 /* View */,
 				F4197081257D064000842EE9 /* Model */,
@@ -86,6 +107,24 @@
 				F46F360E2579070600F01363 /* Info.plist */,
 			);
 			path = VK_user_interface;
+			sourceTree = "<group>";
+		};
+		F4B6E785258141E500B305D2 /* MyFriends */ = {
+			isa = PBXGroup;
+			children = (
+				F4B6E7862581432D00B305D2 /* MyFriendsTableController.swift */,
+				F4B6E78C2581474800B305D2 /* FriendCell.swift */,
+			);
+			path = MyFriends;
+			sourceTree = "<group>";
+		};
+		F4B6E7922581533000B305D2 /* MyGroups */ = {
+			isa = PBXGroup;
+			children = (
+				F4B6E7932581538E00B305D2 /* MyGroupsTableController.swift */,
+				F4455749258168C8005F53EB /* GroupCell.swift */,
+			);
+			path = MyGroups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F445574B258168C8005F53EB /* GroupCell.swift in Sources */,
 				F46F36172579073300F01363 /* VKLogINVC.swift in Sources */,
 				F46F36012579070100F01363 /* AppDelegate.swift in Sources */,
+				F4B6E7882581432D00B305D2 /* MyFriendsTableController.swift in Sources */,
+				F4B6E7942581538E00B305D2 /* MyGroupsTableController.swift in Sources */,
 				F46F36032579070100F01363 /* SceneDelegate.swift in Sources */,
+				F445575125817B76005F53EB /* AllGroupsTableController.swift in Sources */,
+				F4B6E78D2581474800B305D2 /* FriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

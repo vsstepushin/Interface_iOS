@@ -7,20 +7,12 @@
 
 import UIKit
 
-struct friendsMy {
-    let nameFriend: String
-    let avatar: UIImage?
-    
-}
+
 
 class MyFriendsTableController: UITableViewController {
-        var myFriend = [
-            friendsMy(nameFriend: "1", avatar: nil),
-            friendsMy(nameFriend: "2", avatar: nil),
-            friendsMy(nameFriend: "3", avatar: nil),
-            friendsMy(nameFriend: "4", avatar: nil),
-            friendsMy(nameFriend: "5", avatar: nil),
-        ]
+    
+    var myFriend = myFriends.mFriends()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,17 +37,26 @@ class MyFriendsTableController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
-                as? FriendCell
-        else { return UITableViewCell() }
-        cell.friendName.text = myFriend[indexPath.row].nameFriend
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
+                as! FriendCell
+        let friend = myFriend[indexPath.row]
+        cell.friendName.text = "\(friend.nameUser) \(friend.surnameUser)"
+        cell.friendName.adjustsFontSizeToFitWidth = true
+        cell.friendName.minimumScaleFactor = CGFloat(10)
+        cell.friendAvatar.image = friend.avatarUser
         return cell
         // Configure the cell...
 
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showUserImage" {
+            let photoAlbum = segue.destination as? PicturesViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let friend = myFriend[indexPath.row]
+                photoAlbum?.friend = friend
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

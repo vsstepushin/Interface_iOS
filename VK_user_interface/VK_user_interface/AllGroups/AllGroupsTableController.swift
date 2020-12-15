@@ -9,17 +9,16 @@ import UIKit
 
 
 class AllGroupsTableController: UITableViewController {
-    var allGroup = [
-        "a",
-        "b",
-        "c",
-        "d",
-        "f",
-        "g",
-        "i",
-        "k",
-        "l",
-        "m",
+    
+    var allGroup: [Groups] = [
+        Groups(nameGroup: "GB", avatarGroup: "gbAvatar"),
+        Groups(nameGroup: "VK", avatarGroup: "vk2"),
+        Groups(nameGroup: "Viber", avatarGroup: "viberAvatar"),
+        Groups(nameGroup: "Instagramm", avatarGroup: "instagrammAvatar"),
+        Groups(nameGroup: "Telegram", avatarGroup: "telegramAvatar"),
+        Groups(nameGroup: "Skype", avatarGroup: "skypeAvatar"),
+        Groups(nameGroup: "Discord", avatarGroup: "discordAvatar"),
+        Groups(nameGroup: "Zoom", avatarGroup: "zoomAvatar"),
     ]
     
     // MARK: - Table view data source
@@ -40,7 +39,9 @@ class AllGroupsTableController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
                 as? GroupCell
         else { return UITableViewCell() }
-        cell.groupName.text = "\(allGroup[indexPath.row])"
+        let group = allGroup[indexPath.row]
+        cell.groupName.text = group.nameGroup
+        cell.groupAvatar.image = group.avatarGroup
         
         return cell
     }

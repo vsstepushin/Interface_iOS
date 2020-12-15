@@ -10,12 +10,12 @@ import UIKit
 
 
 class MyGroupsTableController: UITableViewController {
-    var myGroup = [
-        "a",
-        "b",
-        "c",
-        "d",
-        "f",
+    var myGroup: [Groups] = [
+        Groups(nameGroup: "GB", avatarGroup: "gbAvatar"),
+        Groups(nameGroup: "VK", avatarGroup: "vk2"),
+        Groups(nameGroup: "Viber", avatarGroup: "viberAvatar"),
+        Groups(nameGroup: "Instagramm", avatarGroup: "instagrammAvatar"),
+        Groups(nameGroup: "Telegram", avatarGroup: "telegramAvatar"),
     ]
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         guard
@@ -51,7 +51,9 @@ class MyGroupsTableController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
                 as? GroupCell
         else { return UITableViewCell() }
-        cell.groupName.text = myGroup[indexPath.row]
+        let group = myGroup[indexPath.row]
+        cell.groupName.text = group.nameGroup
+        cell.groupAvatar.image = group.avatarGroup
         
         return cell
     }
